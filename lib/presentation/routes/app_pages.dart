@@ -17,17 +17,15 @@ import '../views/visits/customers_screen.dart';
 import '../views/visits/customer_details_screen.dart';
 import '../views/visits/start_visit_screen.dart';
 import '../views/visits/visit_checkin_screen.dart';
+import '../views/main_tab_screen.dart';
 
 class AppPages {
   AppPages._();
-
   static String get initial => AppRoutes.splash;
-
   static final List<GetPage> pages = [
     GetPage(
       name: AppRoutes.splash,
       page: () => const SplashScreen(),
-      // Get.put => controller turant ban jata hai aur 2 sec ka timer start hota hai
       binding: BindingsBuilder.put(() => SplashController()),
     ),
     GetPage(
@@ -89,6 +87,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.visitCheckIn,
       page: () => const VisitCheckInScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.mainTab,
+      page: () => const MainTabScreen(),
     ),
   ];
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/theme/app_colors.dart';
 
 class AppIcon extends StatelessWidget {
@@ -20,14 +21,6 @@ class AppIcon extends StatelessWidget {
       width: iconSize,
       height: iconSize,
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppColors.white,
-            AppColors.primaryLight,
-          ],
-        ),
         shape: BoxShape.circle,
         boxShadow: withShadow
             ? [
@@ -39,33 +32,11 @@ class AppIcon extends StatelessWidget {
               ]
             : null,
       ),
-      child: Center(
-        child: Container(
-          width: iconSize * 0.85,
-          height: iconSize * 0.85,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                AppColors.primary,
-                AppColors.primaryDark,
-              ],
-            ),
-            shape: BoxShape.circle,
-          ),
-          child: Center(
-            child: Text(
-              'AP',
-              style: TextStyle(
-                fontSize: iconSize * 0.35,
-                fontWeight: FontWeight.bold,
-                color: AppColors.white,
-                letterSpacing: 2,
-              ),
-            ),
-          ),
-        ),
+      child: SvgPicture.asset(
+        'assets/images/app_icon.svg',
+        width: iconSize,
+        height: iconSize,
+        fit: BoxFit.contain,
       ),
     );
   }

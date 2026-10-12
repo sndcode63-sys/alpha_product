@@ -17,4 +17,5 @@ class AppRoutes {
   static const String customerDetails = '/customer-details';
   static const String startVisit = '/start-visit';
   static const String visitCheckIn = '/visit-check-in';
+  static const String mainTab = '/main-tab';
 }

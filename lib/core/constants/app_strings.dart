@@ -1,12 +1,12 @@
 class AppStrings {
   AppStrings._();
 
-  static const appName = 'FieldForce';
-  static const tagLine = 'Work Smarter';
+  static const appName = 'Alpha Product';
+  static const tagLine = 'Excellence in Delivery';
 
   // Splash
-  static const fieldForce = 'FieldForce';
-  static const workSmarter = 'Work Smarter';
+  static const fieldForce = 'Alpha Product';
+  static const workSmarter = 'Excellence in Delivery';
 
   // Login
   static const login = 'Login to your account';

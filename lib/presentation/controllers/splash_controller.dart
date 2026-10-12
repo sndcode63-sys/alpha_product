@@ -10,6 +10,6 @@ class SplashController extends GetxController {
 
   Future<void> _startTimer() async {
     await Future.delayed(const Duration(seconds: 2));
-    Get.offAllNamed(AppRoutes.login);
+    Get.offAllNamed(AppRoutes.mainTab);
   }
 }
