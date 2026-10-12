@@ -8,15 +8,17 @@ import '../views/auth/otp_verify_screen.dart';
 import '../views/dashboard/dashboard_screen.dart';
 import '../views/profile/my_profile_screen.dart';
 import '../views/profile/change_password_screen.dart';
-import '../views/attendance/attendance_dashboard_screen.dart';
-import '../views/attendance/check_in_screen.dart';
-import '../views/attendance/check_out_screen.dart';
-import '../views/attendance/attendance_history_screen.dart';
-import '../views/attendance/attendance_details_screen.dart';
-import '../views/visits/customers_screen.dart';
-import '../views/visits/customer_details_screen.dart';
-import '../views/visits/start_visit_screen.dart';
-import '../views/visits/visit_checkin_screen.dart';
+// Old attendance screens removed - using new module screen
+// import '../views/attendance/attendance_dashboard_screen.dart';
+// import '../views/attendance/check_in_screen.dart';
+// import '../views/attendance/check_out_screen.dart';
+// import '../views/attendance/attendance_history_screen.dart';
+// import '../views/attendance/attendance_details_screen.dart';
+// Old visit screens removed
+// import '../views/visits/customers_screen.dart';
+// import '../views/visits/customer_details_screen.dart';
+// import '../views/visits/start_visit_screen.dart';
+// import '../views/visits/visit_checkin_screen.dart';
 import '../views/main_tab_screen.dart';
 
 class AppPages {
@@ -52,42 +54,44 @@ class AppPages {
       name: AppRoutes.changePassword,
       page: () => const ChangePasswordScreen(),
     ),
-    GetPage(
-      name: AppRoutes.attendanceDashboard,
-      page: () => const AttendanceDashboardScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.checkIn,
-      page: () => const CheckInScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.checkOut,
-      page: () => const CheckOutScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.attendanceHistory,
-      page: () => const AttendanceHistoryScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.attendanceDetails,
-      page: () => const AttendanceDetailsScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.customers,
-      page: () => const CustomersScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.customerDetails,
-      page: () => const CustomerDetailsScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.startVisit,
-      page: () => const StartVisitScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.visitCheckIn,
-      page: () => const VisitCheckInScreen(),
-    ),
+    // Old attendance routes removed - using new module screen
+    // GetPage(
+    //   name: AppRoutes.attendanceDashboard,
+    //   page: () => const AttendanceDashboardScreen(),
+    // ),
+    // GetPage(
+    //   name: AppRoutes.checkIn,
+    //   page: () => const CheckInScreen(),
+    // ),
+    // GetPage(
+    //   name: AppRoutes.checkOut,
+    //   page: () => const CheckOutScreen(),
+    // ),
+    // GetPage(
+    //   name: AppRoutes.attendanceHistory,
+    //   page: () => const AttendanceHistoryScreen(),
+    // ),
+    // GetPage(
+    //   name: AppRoutes.attendanceDetails,
+    //   page: () => const AttendanceDetailsScreen(),
+    // ),
+    // Old visit routes removed
+    // GetPage(
+    //   name: AppRoutes.customers,
+    //   page: () => const CustomersScreen(),
+    // ),
+    // GetPage(
+    //   name: AppRoutes.customerDetails,
+    //   page: () => const CustomerDetailsScreen(),
+    // ),
+    // GetPage(
+    //   name: AppRoutes.startVisit,
+    //   page: () => const StartVisitScreen(),
+    // ),
+    // GetPage(
+    //   name: AppRoutes.visitCheckIn,
+    //   page: () => const VisitCheckInScreen(),
+    // ),
     GetPage(
       name: AppRoutes.mainTab,
       page: () => const MainTabScreen(),

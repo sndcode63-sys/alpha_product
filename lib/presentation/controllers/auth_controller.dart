@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/constants/app_routes.dart';
 import '../../../core/constants/app_strings.dart';
+import '../../../data/models/user.dart';
+import '../../../data/repositories/local/auth_repository.dart';
 
 class AuthController extends GetxController {
   final RxBool isLoading = false.obs;
   final RxBool rememberMe = false.obs;
+  final Rx<User?> currentUser = Rx<User?>(null);
 
   final TextEditingController mobileOrEmailCtrl = TextEditingController();
   final TextEditingController passwordCtrl = TextEditingController();
@@ -13,6 +16,8 @@ class AuthController extends GetxController {
   final TextEditingController currentPwdCtrl = TextEditingController();
   final TextEditingController newPwdCtrl = TextEditingController();
   final TextEditingController confirmPwdCtrl = TextEditingController();
+
+  final AuthRepository _authRepository = AuthRepository();
 
   @override
   void onClose() {
@@ -27,11 +32,31 @@ class AuthController extends GetxController {
 
   // Login flow
   Future<void> login() async {
+    if (mobileOrEmailCtrl.text.isEmpty || passwordCtrl.text.isEmpty) {
+      showToast('Please enter email and password');
+      return;
+    }
+
     isLoading.value = true;
-    await Future.delayed(const Duration(seconds: 1));
-    isLoading.value = false;
-    Get.offAllNamed(AppRoutes.dashboard);
-    showToast(AppStrings.loginBtn + ' Successful', isError: false);
+    try {
+      final user = await _authRepository.login(
+        mobileOrEmailCtrl.text.trim(),
+        passwordCtrl.text.trim(),
+      );
+
+      if (user != null) {
+        currentUser.value = user;
+        isLoading.value = false;
+        Get.offAllNamed(AppRoutes.mainTab);
+        showToast('Welcome, ${user.name}!', isError: false);
+      } else {
+        isLoading.value = false;
+        showToast('Invalid email or password');
+      }
+    } catch (e) {
+      isLoading.value = false;
+      showToast('Login failed. Please try again.');
+    }
   }
 
   void goForgotPassword() {

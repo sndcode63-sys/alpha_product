@@ -56,6 +56,27 @@ dependencies:
   # SVG support
   flutter_svg: ^2.0.10
 
+  # Local Database
+  sqflite: ^2.3.0
+  path: ^1.8.3
+  path_provider: ^2.1.1
+
+  # Geolocation
+  geolocator: ^10.1.0
+
+  # Maps
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.0
+
+  # Image Picker
+  image_picker: ^1.0.4
+
+  # Signature
+  signature: ^5.4.0
+
+  # URL Launcher
+  url_launcher: ^6.2.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

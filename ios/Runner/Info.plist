@@ -24,6 +24,14 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location for tracking deliveries and attendance.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs access to location for tracking deliveries and attendance.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs camera access for proof of delivery photos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs photo library access for proof of delivery photos.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>
