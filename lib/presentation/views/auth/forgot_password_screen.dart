@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/auth_controller.dart';
 import '../../widgets/common/app_icon.dart';
@@ -103,8 +102,8 @@ class ForgotPasswordScreen extends GetView<AuthController> {
                             ),
                             prefixIcon: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.w),
-                              child: FaIcon(
-                                FontAwesomeIcons.mobileScreenButton,
+                              child: Icon(
+                                Icons.smartphone,
                                 size: 18.sp,
                                 color: AppColors.primary,
                               ),

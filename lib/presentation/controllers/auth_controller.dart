@@ -103,6 +103,19 @@ class AuthController extends GetxController {
     showToast('Logged out', isError: false);
   }
 
+  void comingSoon([String feature = 'This feature']) {
+    Get.snackbar(
+      'Coming Soon',
+      '$feature will be available soon',
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.blue.shade50,
+      colorText: Colors.blue.shade900,
+      margin: const EdgeInsets.all(12),
+      borderRadius: 12,
+      duration: const Duration(seconds: 2),
+    );
+  }
+
   void showToast(String msg, {bool isError = true}) {
     Get.snackbar(
       isError ? 'Error' : 'Success',

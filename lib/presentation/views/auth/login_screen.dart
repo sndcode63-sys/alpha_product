@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/auth_controller.dart';
 import '../../widgets/common/app_icon.dart';
@@ -116,8 +115,8 @@ class LoginScreen extends GetView<AuthController> {
                             ),
                             prefixIcon: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.w),
-                              child: FaIcon(
-                                FontAwesomeIcons.user,
+                              child: Icon(
+                                Icons.person,
                                 size: 18.sp,
                                 color: AppColors.primary,
                               ),
@@ -165,16 +164,16 @@ class LoginScreen extends GetView<AuthController> {
                             ),
                             prefixIcon: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.w),
-                              child: FaIcon(
-                                FontAwesomeIcons.lock,
+                              child: Icon(
+                                Icons.lock,
                                 size: 18.sp,
                                 color: AppColors.primary,
                               ),
                             ),
                             suffixIcon: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.w),
-                              child: FaIcon(
-                                FontAwesomeIcons.eye,
+                              child: Icon(
+                                Icons.visibility,
                                 size: 18.sp,
                                 color: AppColors.textHint,
                               ),
@@ -303,7 +302,7 @@ class LoginScreen extends GetView<AuthController> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => controller.comingSoon('Sign Up'),
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.symmetric(horizontal: 8.w),
                         minimumSize: const Size(0, 0),

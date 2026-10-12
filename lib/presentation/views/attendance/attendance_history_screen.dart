@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/attendance_controller.dart';
 import '../../widgets/common/app_header.dart';
@@ -176,10 +175,10 @@ class AttendanceHistoryScreen extends GetView<AttendanceController> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        FaIcon(
+                                        Icon(
                                           item.status == 'Absent'
-                                              ? FontAwesomeIcons.xmark
-                                              : FontAwesomeIcons.check,
+                                              ? Icons.close
+                                              : Icons.check,
                                           size: 9.sp,
                                           color: statusColor,
                                         ),

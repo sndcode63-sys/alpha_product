@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import '../../core/constants/app_routes.dart';
+import '../controllers/splash_controller.dart';
 import '../views/splash/splash_screen.dart';
 import '../views/auth/login_screen.dart';
 import '../views/auth/forgot_password_screen.dart';
@@ -12,6 +13,10 @@ import '../views/attendance/check_in_screen.dart';
 import '../views/attendance/check_out_screen.dart';
 import '../views/attendance/attendance_history_screen.dart';
 import '../views/attendance/attendance_details_screen.dart';
+import '../views/visits/customers_screen.dart';
+import '../views/visits/customer_details_screen.dart';
+import '../views/visits/start_visit_screen.dart';
+import '../views/visits/visit_checkin_screen.dart';
 
 class AppPages {
   AppPages._();
@@ -22,6 +27,8 @@ class AppPages {
     GetPage(
       name: AppRoutes.splash,
       page: () => const SplashScreen(),
+      // Get.put => controller turant ban jata hai aur 2 sec ka timer start hota hai
+      binding: BindingsBuilder.put(() => SplashController()),
     ),
     GetPage(
       name: AppRoutes.login,
@@ -66,6 +73,22 @@ class AppPages {
     GetPage(
       name: AppRoutes.attendanceDetails,
       page: () => const AttendanceDetailsScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.customers,
+      page: () => const CustomersScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.customerDetails,
+      page: () => const CustomerDetailsScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.startVisit,
+      page: () => const StartVisitScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.visitCheckIn,
+      page: () => const VisitCheckInScreen(),
     ),
   ];
 }

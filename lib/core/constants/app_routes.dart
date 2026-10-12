@@ -13,4 +13,8 @@ class AppRoutes {
   static const String checkOut = '/check-out';
   static const String attendanceHistory = '/attendance-history';
   static const String attendanceDetails = '/attendance-details';
+  static const String customers = '/customers';
+  static const String customerDetails = '/customer-details';
+  static const String startVisit = '/start-visit';
+  static const String visitCheckIn = '/visit-check-in';
 }

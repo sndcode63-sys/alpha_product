@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/attendance_controller.dart';
 import '../../controllers/dashboard_controller.dart';
@@ -195,8 +194,8 @@ class CheckInScreen extends GetView<AttendanceController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          FaIcon(
-                            FontAwesomeIcons.camera,
+                          Icon(
+                            Icons.camera_alt,
                             color: controller.selfieCaptured.value
                                 ? AppColors.success
                                 : AppColors.primary,

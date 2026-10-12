@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/attendance_controller.dart';
 import '../../widgets/common/app_header.dart';
@@ -88,7 +87,7 @@ class AttendanceDetailsScreen extends GetView<AttendanceController> {
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              FaIcon(FontAwesomeIcons.check, size: 12.r, color: statusColor),
+                              Icon(Icons.check, size: 12.r, color: statusColor),
                               SizedBox(width: 6.w),
                               Text(
                                 statusLabel,
@@ -119,28 +118,28 @@ class AttendanceDetailsScreen extends GetView<AttendanceController> {
                     _detailRow(
                       AppStrings.checkIn,
                       record.checkIn,
-                      FontAwesomeIcons.arrowRightToBracket,
+                      Icons.login,
                       AppColors.chipPresent,
                     ),
                     const Divider(height: 1, color: AppColors.divider),
                     _detailRow(
                       AppStrings.checkOut,
                       record.checkOut,
-                      FontAwesomeIcons.arrowRightFromBracket,
+                      Icons.logout,
                       AppColors.alert,
                     ),
                     const Divider(height: 1, color: AppColors.divider),
                     _detailRow(
                       AppStrings.workingHours,
                       record.workingHours,
-                      FontAwesomeIcons.clock,
+                      Icons.access_time,
                       AppColors.primary,
                     ),
                     const Divider(height: 1, color: AppColors.divider),
                     _detailRow(
                       AppStrings.location,
                       record.location,
-                      FontAwesomeIcons.locationDot,
+                      Icons.location_on,
                       AppColors.accentOrange,
                     ),
                     const Divider(height: 1, color: AppColors.divider),

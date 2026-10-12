@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/dashboard_controller.dart';
 import '../../controllers/auth_controller.dart';
@@ -112,16 +111,16 @@ class MyProfileScreen extends GetView<DashboardController> {
                     ),
                     child: Column(
                       children: [
-                        _infoRow(AppStrings.name, controller.user['name']!, FontAwesomeIcons.user,
+                        _infoRow(AppStrings.name, controller.user['name']!, Icons.person,
                             AppColors.accentBlue),
                         const Divider(color: AppColors.divider, height: 1),
                         _infoRow(AppStrings.phone, controller.user['phone']!,
-                            FontAwesomeIcons.phone, AppColors.accentGreen),
+                            Icons.phone, AppColors.accentGreen),
                         const Divider(color: AppColors.divider, height: 1),
                         _infoRow(AppStrings.email, controller.user['email']!,
-                            FontAwesomeIcons.envelope, AppColors.accentOrange),
+                            Icons.email, AppColors.accentOrange),
                         const Divider(color: AppColors.divider, height: 1),
-                        _infoRow(AppStrings.role, controller.user['role']!, FontAwesomeIcons.userTie,
+                        _infoRow(AppStrings.role, controller.user['role']!, Icons.badge,
                             AppColors.primary),
                       ],
                     ),
@@ -141,17 +140,17 @@ class MyProfileScreen extends GetView<DashboardController> {
                     children: [
                       _menuTile(
                         AppStrings.changePassword,
-                        FontAwesomeIcons.key,
+                        Icons.vpn_key,
                         AppColors.accentPurple,
                         onTap: () => Get.toNamed(AppRoutes.changePassword),
                       ),
                       const Divider(height: 1, color: AppColors.divider),
-                      _menuTile(AppStrings.settings, FontAwesomeIcons.gear, AppColors.accentBlue,
-                          onTap: () {}),
+                      _menuTile(AppStrings.settings, Icons.settings, AppColors.accentBlue,
+                          onTap: () => Get.find<AuthController>().comingSoon(AppStrings.settings)),
                       const Divider(height: 1, color: AppColors.divider),
                       _menuTile(
                         AppStrings.logout,
-                        FontAwesomeIcons.rightFromBracket,
+                        Icons.logout,
                         AppColors.accentRed,
                         onTap: () {
                           _showLogoutDialog();
@@ -260,7 +259,7 @@ class MyProfileScreen extends GetView<DashboardController> {
                   shape: BoxShape.circle,
                 ),
                 alignment: Alignment.center,
-                child: FaIcon(FontAwesomeIcons.rightFromBracket,
+                child: Icon(Icons.logout,
                     color: AppColors.alert, size: 26.sp),
               ),
               SizedBox(height: AppSpacing.l),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/auth_controller.dart';
 import '../../widgets/common/app_header.dart';
@@ -33,8 +32,8 @@ class ChangePasswordScreen extends GetView<AuthController> {
                     shape: BoxShape.circle,
                   ),
                   alignment: Alignment.center,
-                  child: FaIcon(
-                    FontAwesomeIcons.lock,
+                  child: Icon(
+                    Icons.lock,
                     color: AppColors.primary,
                     size: 32.sp,
                   ),

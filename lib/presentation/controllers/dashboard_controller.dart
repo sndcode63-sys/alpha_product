@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import '../../../core/constants/app_routes.dart';
 import '../../../core/constants/app_strings.dart';
 import 'auth_controller.dart';
+import 'visit_controller.dart';
 
 class DashboardController extends GetxController {
   final RxInt currentIndex = 0.obs;
@@ -18,11 +19,27 @@ class DashboardController extends GetxController {
     Get.toNamed(AppRoutes.attendanceDashboard);
   }
 
+  void navigateToVisits() {
+    Get.find<VisitController>().openCustomers();
+  }
+
+  void comingSoon(String feature) {
+    Get.find<AuthController>().comingSoon(feature);
+  }
+
   void navigateToProfile() {
     Get.toNamed(AppRoutes.myProfile);
   }
 
   void onTapIndex(int index) {
+    if (index == 1) {
+      comingSoon('Tasks');
+      return;
+    }
+    if (index == 2) {
+      comingSoon('Chat');
+      return;
+    }
     currentIndex.value = index;
   }
 

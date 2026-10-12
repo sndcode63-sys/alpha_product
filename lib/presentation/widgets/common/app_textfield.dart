@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/constants/app_spacing.dart';
 
@@ -145,15 +144,15 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       validator: widget.validator,
       onChanged: widget.onChanged,
       textInputAction: widget.textInputAction,
-      prefixIcon: FaIcon(
-        FontAwesomeIcons.lock,
+      prefixIcon: Icon(
+        Icons.lock,
         size: 16.sp,
         color: AppColors.textHint,
       ),
       suffixIcon: GestureDetector(
         onTap: () => setState(() => _obscureText = !_obscureText),
-        child: FaIcon(
-          _obscureText ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
+        child: Icon(
+          _obscureText ? Icons.visibility : Icons.visibility_off,
           size: 16.sp,
           color: AppColors.textHint,
         ),

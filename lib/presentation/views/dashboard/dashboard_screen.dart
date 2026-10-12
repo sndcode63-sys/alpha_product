@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/dashboard_controller.dart';
 import '../../controllers/attendance_controller.dart';
@@ -107,11 +106,11 @@ class DashboardScreen extends GetView<DashboardController> {
                     ),
                     child: Row(
                       children: [
-                        _miniStat('Today', '4 Visits', AppColors.accentGreen, FontAwesomeIcons.peopleGroup),
+                        _miniStat('Today', '4 Visits', AppColors.accentGreen, Icons.groups),
                         Container(width: 1.w, height: 36.h, color: AppColors.white.withOpacity(0.2)),
-                        _miniStat('Pending', '8 Tasks', AppColors.accentOrange, FontAwesomeIcons.listCheck),
+                        _miniStat('Pending', '8 Tasks', AppColors.accentOrange, Icons.checklist),
                         Container(width: 1.w, height: 36.h, color: AppColors.white.withOpacity(0.2)),
-                        _miniStat('Orders', '₹12.3k', AppColors.accentBlue, FontAwesomeIcons.cartShopping),
+                        _miniStat('Orders', '₹12.3k', AppColors.accentBlue, Icons.shopping_cart),
                       ],
                     ),
                   ),
@@ -147,17 +146,17 @@ class DashboardScreen extends GetView<DashboardController> {
                             crossAxisSpacing: AppSpacing.m,
                             childAspectRatio: 0.98,
                             children: [
-                              _menuCard(AppStrings.attendance, FontAwesomeIcons.calendarCheck,
+                              _menuCard(AppStrings.attendance, Icons.event_available,
                                   AppColors.accentGreen, controller.navigateToAttendance),
-                              _menuCard(AppStrings.visits, FontAwesomeIcons.locationPin,
-                                  AppColors.accentOrange, () {}),
-                              _menuCard(AppStrings.orders, FontAwesomeIcons.receipt,
-                                  AppColors.accentRed, () {}),
-                              _menuCard(AppStrings.expenses, FontAwesomeIcons.coins,
-                                  AppColors.accentGreen, () {}),
-                              _menuCard(AppStrings.customers, FontAwesomeIcons.users,
-                                  AppColors.accentBlue, () {}),
-                              _menuCard(AppStrings.profile, FontAwesomeIcons.user,
+                              _menuCard(AppStrings.visits, Icons.place,
+                                  AppColors.accentOrange, controller.navigateToVisits),
+                              _menuCard(AppStrings.orders, Icons.receipt_long,
+                                  AppColors.accentRed, () => controller.comingSoon(AppStrings.orders)),
+                              _menuCard(AppStrings.expenses, Icons.monetization_on,
+                                  AppColors.accentGreen, () => controller.comingSoon(AppStrings.expenses)),
+                              _menuCard(AppStrings.customers, Icons.people,
+                                  AppColors.accentBlue, controller.navigateToVisits),
+                              _menuCard(AppStrings.profile, Icons.person,
                                   AppColors.primary, controller.navigateToProfile),
                             ],
                           ),
@@ -194,13 +193,13 @@ class DashboardScreen extends GetView<DashboardController> {
                             child: Column(
                               children: [
                                 _activityItem(AppStrings.attendance, 'Checked in at 09:15 AM',
-                                    FontAwesomeIcons.calendarCheck, AppColors.accentGreen),
+                                    Icons.event_available, AppColors.accentGreen),
                                 const Divider(height: 1, color: AppColors.divider),
                                 _activityItem('Visits', 'Visited Kumar Stores',
-                                    FontAwesomeIcons.locationPin, AppColors.accentOrange),
+                                    Icons.place, AppColors.accentOrange),
                                 const Divider(height: 1, color: AppColors.divider),
                                 _activityItem('Orders', 'New order received (₹4,500)',
-                                    FontAwesomeIcons.receipt, AppColors.accentBlue),
+                                    Icons.receipt_long, AppColors.accentBlue),
                               ],
                             ),
                           ),
@@ -291,7 +290,7 @@ class DashboardScreen extends GetView<DashboardController> {
           side: BorderSide(color: AppColors.white, width: 3.w),
         ),
         onPressed: () => Get.find<AttendanceController>().goCheckIn(),
-        child: FaIcon(FontAwesomeIcons.locationArrow, color: AppColors.white, size: 22.sp),
+        child: Icon(Icons.navigation, color: AppColors.white, size: 22.sp),
       ),
     );
   }
@@ -300,7 +299,7 @@ class DashboardScreen extends GetView<DashboardController> {
     return Expanded(
       child: Column(
         children: [
-          FaIcon(icon, color: AppColors.white, size: 16.sp),
+          Icon(icon, color: AppColors.white, size: 16.sp),
           SizedBox(height: 6.h),
           Text(
             value,

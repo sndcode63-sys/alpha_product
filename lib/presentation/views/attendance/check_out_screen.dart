@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/attendance_controller.dart';
 import '../../widgets/common/app_header.dart';
@@ -153,7 +152,7 @@ class CheckOutScreen extends GetView<AttendanceController> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    FaIcon(FontAwesomeIcons.circleCheck,
+                    Icon(Icons.check_circle,
                         color: AppColors.success, size: 18.sp),
                     SizedBox(width: AppSpacing.sm),
                     Expanded(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../controllers/attendance_controller.dart';
 import '../../widgets/common/app_header.dart';
@@ -188,7 +187,7 @@ class AttendanceDashboardScreen extends GetView<AttendanceController> {
                   Expanded(
                     child: _actionTile(
                       AppStrings.checkIn,
-                      FontAwesomeIcons.arrowRightToBracket,
+                      Icons.login,
                       AppColors.primary,
                       controller.goCheckIn,
                     ),
@@ -197,7 +196,7 @@ class AttendanceDashboardScreen extends GetView<AttendanceController> {
                   Expanded(
                     child: _actionTile(
                       AppStrings.checkOut,
-                      FontAwesomeIcons.arrowRightFromBracket,
+                      Icons.logout,
                       AppColors.accentRed,
                       controller.goCheckOut,
                     ),
@@ -206,7 +205,7 @@ class AttendanceDashboardScreen extends GetView<AttendanceController> {
                   Expanded(
                     child: _actionTile(
                       AppStrings.history,
-                      FontAwesomeIcons.clockRotateLeft,
+                      Icons.history,
                       AppColors.accentOrange,
                       controller.goHistory,
                     ),
