@@ -1,37 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'core/theme/app_theme.dart';
-import 'core/constants/app_strings.dart';
-import 'presentation/bindings/app_bindings.dart';
-import 'presentation/routes/app_pages.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
-}
+import 'core/app_binding.dart';
+import 'core/app_routes.dart';
+import 'core/app_theme.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void main() => runApp(const AlphaApp());
+
+class AlphaApp extends StatelessWidget {
+  const AlphaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (_, child) {
-        return GetMaterialApp(
-          title: AppStrings.appName,
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.light,
-          initialBinding: AppBindings(),
-          initialRoute: AppPages.initial,
-          getPages: AppPages.pages,
-          defaultTransition: Transition.cupertino,
-          transitionDuration: const Duration(milliseconds: 300),
-        );
-      },
+    return GetMaterialApp(
+      title: 'Alpha Products',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.light,
+      initialBinding: AppBinding(),
+      initialRoute: AppRoutes.splash,
+      getPages: AppRoutes.pages,
     );
   }
 }
