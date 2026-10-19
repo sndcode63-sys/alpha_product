@@ -1,41 +1,31 @@
-name: alpha_products
-description: Alpha Products mobile app (Attendance, Delivery, Vehicle Tracking)
-publish_to: 'none'
+name: alpha_field_app
+description: Field sales visits, attendance and delivery tracking in one role-based app.
+publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.3.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.6
+  get_storage: ^2.1.1
+  geolocator: ^13.0.1
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  image_picker: ^1.1.2
+  url_launcher: ^6.3.0
+  signature: ^5.5.0
+  intl: ^0.19.0
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
-  flutter_launcher_icons: ^0.13.1
-  flutter_native_splash: ^2.4.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
-
-# App icon: terminal me chalao ->  dart run flutter_launcher_icons
-flutter_launcher_icons:
-  android: true
-  ios: true
-  image_path: assets/images/app_icon.png
-  remove_alpha_ios: true
-  adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_foreground: assets/images/app_icon_foreground.png
-
-# Native splash: terminal me chalao ->  dart run flutter_native_splash:create
-flutter_native_splash:
-  color: "#FFFFFF"
-  image: assets/images/logo_mark.png
-  android_12:
-    color: "#FFFFFF"
-    image: assets/images/logo_mark.png
